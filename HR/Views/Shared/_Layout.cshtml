@@ -16,12 +16,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
-            </div>
+                @if (Session["username"] != null)
+                {
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                        <li>@Html.ActionLink("Employee Information", "Create", "Employees", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Department", "Create", "Departments", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Company", "Create", "Companies", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Designation", "Create", "Designations", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("EmployeeAttendance", "Create", "EmployeeAttendances", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                }
+                </div>
         </div>
     </nav>
     <div class="container body-content">

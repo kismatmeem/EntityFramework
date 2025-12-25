@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div>
+        <label>Username</label>
+        <input type="text" name="username" required />
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password" required />
+    </div>
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+}
+
+@if (ViewBag.Message != null)
+{
+    <p style="color:red">@ViewBag.Message</p>
+}
